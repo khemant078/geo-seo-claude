@@ -46,6 +46,20 @@ curl -fsSL https://raw.githubusercontent.com/zubair-trabzada/geo-seo-claude/main
 git clone https://github.com/zubair-trabzada/geo-seo-claude.git
 cd geo-seo-claude
 ./install.sh
+
+### Run the web UI locally
+
+The web UI lives at `scripts/webapp/app.py`. To run it from the project root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python -m playwright install  # optional for Playwright features
+FLASK_DEBUG=true python scripts/webapp/app.py
+```
+
+For a quick demo, copy `examples/prospects.json` to `~/.geo-prospects/prospects.json` and then open http://localhost:5050 in your browser.
 ```
 
 ### Windows (Git Bash)
